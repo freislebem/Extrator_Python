@@ -1,0 +1,34 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <form action="/listarLink" method="POST">
+        <table class="table table-striped table-responsive table-bordered" align="center">
+            <tr>
+                <div class = "form-group">
+                    <th><label for="nomeSite">Site:</label></th>
+                    <th><input type="text" id="nomeSite" name = "nomeSite" class="form-control"/></th>
+                </div>
+            </tr>
+
+            <tr>
+                <div class = "form-group">
+                    <th><label for="enderecoSite">Endereço:</label></th>
+                    <th><input type="text" id="enderecoSite" name="enderecoSite" class="form-control"/></th>
+                </div>
+            </tr>
+
+            <tr>
+                <div class = "form-group">
+                    <th><label for="palavrasChave">Palavras-Chave</label></th>
+                    <th><input type="text" id="palavrasChave" name="palavrasChave" class="form-control"/></th>
+                </div>
+            </tr>
+
+            <tr>
+                <th></th>
+                <th><div class="button">
+                    <button type="submit">Incluir</button>
+                    </div></th>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

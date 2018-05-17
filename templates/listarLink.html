@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block conteudo %}
+        <table class="table table-striped table-responsive table-bordered" align="center">
+            <thead class="thead-default">
+                <tr>
+                    <th>Site</th>
+                    <th>Link</th>
+                    <th>Palavras-chave</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for lista in listaLinks %}
+                <tr>
+                    <td>{{ lista.nomeSite }}</td>
+                    <td>{{ lista.enderecoSite }}</td>
+                    <td>{{ lista.palavrasChave }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

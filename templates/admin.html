@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+</p>
+
+<p><h2>Funcionalidades</h2></p>
+
+<div class="row">
+    <ul class="col-lg-3">
+        <li><img src="../static/Web.JPG" width="17" height="17"> <a href="/criarLink">Cadastrar URLs para extração</a></li>
+        <li><img src="../static/Lista.JPG" width="15" height="15"><a href="/listar"> Lista de URLs e palavras-chave</a></li>
+    </ul>
+
+    <ul class="col-lg-3">
+        <li><img src="../static/Localizar.JPG" width="15" height="15"> Iniciar busca de dados</li>
+        <li><img src="../static/Engrenagem.JPG" width="17" height="17"> Executar processamento PLN</li>
+
+    </ul>
+
+</div>
+
+{% endblock %}
