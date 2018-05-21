@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session, flash
 from Enderecos import Enderecos
 
 app = Flask(__name__)
+app.secret_key = 'misere'
 
 lista = []
 
@@ -37,5 +38,25 @@ def listar():
 @app.route('/Admin')
 def Admin():
     return render_template('admin.html', titulo = 'ADMINISTRAÇÃO')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/autenticar', methods=['POST',])
+def autenticar():
+    if 'mestra' == request.form['senha']:
+        session['usuario_logado'] = request.form['usuario']
+        flash(request.form['usuario'] + ' logou com sucesso!')
+        return redirect('/listar')
+    else:
+        flash('Não logado, tente novamente!')
+        return redirect('/login')
+
+@app.route('/logout')
+def logout():
+    session['usuario_logado'] = None
+    flash('Nenhum usuário logado!')
+    return redirect('/login')
 
 app.run(debug=True)
