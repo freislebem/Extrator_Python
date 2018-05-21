@@ -21,7 +21,8 @@
     {% endwith %}
 
     <div class="page-header">
-        <h1>{{ titulo }}</h1><a href="/"><img src="../static/Home.JPG" width="15" height="15"></a>
+        <h1>{{ titulo }}</h1><a href="{{ url_for('index') }}"><img src="../static/Home.JPG" width="15" height="15"></a>
+        <a href="{{ url_for('logout') }}"><img src="../static/Logout.JPG" width="15" height="15"></a>
     </div>
     {% block conteudo %}{% endblock %}
 
