@@ -19,7 +19,7 @@ lista = [site1, site2]
 
 @app.route('/')
 def index():
-    return render_template('index.html', titulo = 'MISERÊ DO QUEIJO')
+    return render_template('index.html', titulo = 'WEB SCRAPER')
 
 @app.route('/criarLink')
 def criarLink():
@@ -70,9 +70,13 @@ def autenticar():
             proxima_pagina = request.form['proxima']
             # return redirect('/{}'.format(proxima_pagina))
             return redirect(proxima_pagina)
+        else:
+            flash('Login ou senha inválido, tente novamente!')
+            #return redirect('/login')
+            return redirect(url_for('login'))
     else:
-        flash('Não logado, tente novamente!')
-        #return redirect('/login')
+        flash('Login ou senha inválido, tente novamente!')
+        # return redirect('/login')
         return redirect(url_for('login'))
 
 @app.route('/logout')
